@@ -1,5 +1,5 @@
  //VOCÊ DEVE SUBSTITUIR A URL ABAIXO PELA URL DO IMPORT SEU PROJETO NO FIREBASE (CONFIGURAÇÕES CDN DO SEU PROJETO)
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
  //VOCÊ DEVE SUBSTITUIR OS CÓDIGOS ABAIXOS CÓDIGOS DO SEU PROJETO NO FIREBASE (FIREBASE CONFIGURATION)
 const firebaseConfig = {
@@ -16,7 +16,7 @@ const firebaseConfig = {
  const app = initializeApp(firebaseConfig);
 
  //VOCÊ DEVE SUBSTITUIR AO FINAL DA URL AS PALAVRAS FIREBASE-APP POR FIREBASE-DATABASE
- import { getDatabase, ref, child, get, set, update, remove } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+ import { getDatabase, ref, child, get, set, update, remove } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
 
  const db = getDatabase();
