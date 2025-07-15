@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Management</title>
+    <title>Vinyl Store Management</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>CADASTRO DE PRODUTOS</h1>
-            <input type="text" id="codigo" placeholder="Código" required>
-            <input type="text" id="produto" placeholder="Nome do Produto" required>
-            <input type="text" id="categoria" placeholder="Categoria" required>
-            <input type="text" id="quantidade" placeholder="Quantidade" required>
-            <input type="text" id="valor" placeholder="Valor do Produto" required>
-            <input id="cadastrarProduto" type="submit" value="Cadastrar Produto" >
-    </div>
-    <div class="container">
-        <h1>BUSCA E ATUALIZAÇÃO NOS PRODUTOS</h1>
-            <input type="text" id="idProduto" placeholder="Enter ID" required>
-            <input id="buscarProduto" type="submit" value="Buscar Produto" style="background-color: #d85b5b;">
+    <div class="main-container">
+        <div class="form-container">
+            <div class="form-section">
+                <h1><i class="icon">💿</i> CADASTRO DE VINIL</h1>
+                <div class="form-group">
+                    <input type="text" id="codigo" placeholder="Código do Vinil" required>
+                    <input type="text" id="produto" placeholder="Título do Álbum" required>
+                    <input type="text" id="categoria" placeholder="Artista/Banda" required>
+                    <input type="text" id="quantidade" placeholder="Quantidade em Estoque" required>
+                    <input type="text" id="valor" placeholder="Preço (R$)" required>
+                    <input id="cadastrarProduto" type="submit" value="Cadastrar Vinil" class="btn-primary">
+                </div>
+            </div>
 
-            <input type="text" id="dadoProduto" placeholder="Produto">
-            <input type="text" id="dadoCategoria" placeholder="Categoria">
-            <input type="text" id="dadoQuantidade" placeholder="Quantidade">
-            <input type="text" id="dadoValor" placeholder="Valor do Produto">
-            <input id="atualizarProduto" type="submit" value="Atualizar Produto" style="background-color: #d7dfa9;">
-            
-            <input id="deletarProduto" type="submit" value="Deletar Produto" style="background-color: #a14e5c;">
+            <div class="form-section">
+                <h1><i class="icon">🔍</i> GERENCIAMENTO DE VINIS</h1>
+                <div class="form-group">
+                    <input type="text" id="idProduto" placeholder="Digite o Código" required>
+                    <input id="buscarProduto" type="submit" value="Buscar Vinil" class="btn-search">
+
+                    <input type="text" id="dadoProduto" placeholder="Título do Álbum">
+                    <input type="text" id="dadoCategoria" placeholder="Artista/Banda">
+                    <input type="text" id="dadoQuantidade" placeholder="Quantidade">
+                    <input type="text" id="dadoValor" placeholder="Preço (R$)">
+                    <input id="atualizarProduto" type="submit" value="Atualizar Vinil" class="btn-update">
+                    
+                    <input id="deletarProduto" type="submit" value="Remover Vinil" class="btn-delete">
+                </div>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="/script.js"></script>
