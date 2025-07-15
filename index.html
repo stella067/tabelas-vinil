@@ -1,44 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinyl Store Management</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerenciamento de Vinis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --roxo-claro: #d1b7c7;
+      --azul-gradiente: linear-gradient(to right, #d1b7c7, #8ca4ce);
+      --fundo-caixa: rgba(255, 255, 255, 0.08);
+      --texto-principal: #ffffff;
+      --vinil-marrom: #5a2e2e;
+      --vinil-marrom-claro: #8a4949;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #caa0b7, #748cc1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: var(--texto-principal);
+    }
+
+    .main-container {
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .form-section {
+      flex: 1;
+      min-width: 320px;
+    }
+
+    .form-section h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input[type="text"] {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 15px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .btn-primary,
+    .btn-search,
+    .btn-update,
+    .btn-delete {
+      background-color: var(--vinil-marrom);
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 15px;
+      font-size: 15px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-search {
+      background-color: var(--vinil-marrom-claro);
+    }
+
+    .btn-primary:hover,
+    .btn-search:hover,
+    .btn-update:hover,
+    .btn-delete:hover {
+      opacity: 0.85;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="main-container">
-        <div class="form-container">
-            <div class="form-section">
-                <h1><i class="icon">💿</i> CADASTRO DE VINIL</h1>
-                <div class="form-group">
-                    <input type="text" id="codigo" placeholder="Código do Vinil" required>
-                    <input type="text" id="produto" placeholder="Título do Álbum" required>
-                    <input type="text" id="categoria" placeholder="Artista/Banda" required>
-                    <input type="text" id="quantidade" placeholder="Quantidade em Estoque" required>
-                    <input type="text" id="valor" placeholder="Preço (R$)" required>
-                    <input id="cadastrarProduto" type="submit" value="Cadastrar Vinil" class="btn-primary">
-                </div>
-            </div>
 
-            <div class="form-section">
-                <h1><i class="icon">🔍</i> GERENCIAMENTO DE VINIS</h1>
-                <div class="form-group">
-                    <input type="text" id="idProduto" placeholder="Digite o Código" required>
-                    <input id="buscarProduto" type="submit" value="Buscar Vinil" class="btn-search">
-
-                    <input type="text" id="dadoProduto" placeholder="Título do Álbum">
-                    <input type="text" id="dadoCategoria" placeholder="Artista/Banda">
-                    <input type="text" id="dadoQuantidade" placeholder="Quantidade">
-                    <input type="text" id="dadoValor" placeholder="Preço (R$)">
-                    <input id="atualizarProduto" type="submit" value="Atualizar Vinil" class="btn-update">
-                    
-                    <input id="deletarProduto" type="submit" value="Remover Vinil" class="btn-delete">
-                </div>
-            </div>
-        </div>
+  <div class="main-container">
+    <!-- Cadastro -->
+    <div class="form-section">
+      <h1>💿 CADASTRO DE VINIL</h1>
+      <div class="form-group">
+        <input type="text" id="codigo" placeholder="Código do Vinil" required>
+        <input type="text" id="produto" placeholder="Título do Álbum" required>
+        <input type="text" id="categoria" placeholder="Artista/Banda" required>
+        <input type="text" id="quantidade" placeholder="Quantidade em Estoque" required>
+        <input type="text" id="valor" placeholder="Preço (R$)" required>
+        <input id="cadastrarProduto" type="submit" value="Cadastrar Vinil" class="btn-primary">
+      </div>
     </div>
 
-    <script type="module" src="/script.js"></script>
+    <!-- Gerenciamento -->
+    <div class="form-section">
+      <h1>🔍 GERENCIAMENTO DE VINIS</h1>
+      <div class="form-group">
+        <input type="text" id="idProduto" placeholder="Digite o Código" required>
+        <input id="buscarProduto" type="submit" value="Buscar Vinil" class="btn-search">
+        <input type="text" id="dadoProduto" placeholder="Título do Álbum">
+        <input type="text" id="dadoCategoria" placeholder="Artista/Banda">
+        <input type="text" id="dadoQuantidade" placeholder="Quantidade">
+        <input type="text" id="dadoValor" placeholder="Preço (R$)">
+        <input id="atualizarProduto" type="submit" value="Atualizar Vinil" class="btn-update">
+        <input id="deletarProduto" type="submit" value="Remover Vinil" class="btn-delete">
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase e script.js -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>
